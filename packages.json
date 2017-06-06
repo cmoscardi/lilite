@@ -9,7 +9,7 @@
 {
   "name": "MongoDB",
   "description": "MongoDB",
-  "category": "Programming",
+  "category": "Databases",
   "icon_url":"/static/images/mongodb-48.png",
   "installers": {"ubuntu": {"pre_install": ["apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6",
                                             "fnames=`ls /etc/*-release`",
@@ -41,12 +41,33 @@
                          "post_install": []}}
 
 },
+{ 
+  "name": "Vagrant",
+  "description": "Vagrant",
+  "category": "Programming",
+  "icon_url":"/static/images/vagrant-48.png",
+  "installers": {"apt": {"pre_install": [
+                          "apt-get -y install wget",
+                          "wget https://releases.hashicorp.com/vagrant/1.9.5/vagrant_1.9.5_x86_64.deb?_ga=2.218324825.1773379123.1496771428-252725762.1496771428",
+                          "dpkg -i vagrant_1.9.5_x86_64.deb",
+                          "rm vagrant_1.9.5_x86_64.deb"],
+                         "package_name": "",
+                         "post_install": []}}
+
+},
 {
   "name": "VLC",
   "description": "VLC Media Player",
   "category": "Media",
   "icon_url":"/static/images/vlc-48.png",
   "installers": {"apt": {"pre_install": [], "package_name": "vlc", "post_install": []}}
+},
+{
+  "name": "PostgreSQL",
+  "description": "PostgreSQL database",
+  "category": "Databases",
+  "icon_url":"/static/images/postgres-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "postgresql postgresql-contrib", "post_install": []}}
 },
 {
   "name": "Git",
