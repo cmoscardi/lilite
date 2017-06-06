@@ -8,11 +8,15 @@ def register_package_creator(app,
                              InstallMethod,
                              template_path=None):
 
-    @app.route("/get_installer", methods=["POST"])
+    @app.route("/get_installer", methods=["GET", "POST"])
     def get_installer():
-        version = request.form.get('version')
+        if request.method == "POST":
+            version, number = request.form.get('version').split("_")
+            package_reqs = request.form.getlist("packages")
+        else:
+            version, number = request.args.get('version').split("_")
+            package_reqs = request.args.getlist("packages")
         legal_methods = InstallMethod.ALLOWED_INSTALLERS_BY_VERSION[version]
-        package_reqs = request.form.getlist("packages")
         packages_by_name = {p.name: p for p in Package.query.all()}
         methods_by_package = defaultdict(list)
         for m in InstallMethod.query.all():
@@ -32,7 +36,6 @@ def register_package_creator(app,
             standard.append(method.package_name)
           else:
             weird.append((method.pre_install, method.package_name, method.post_install))
-        path = "script.sh" if not template_path\
-                           else template_path + "/script.sh"
+        path = "script.sh"
         resp= render_template(path, standard=standard, weird=weird)
         return Response(resp, mimetype="text")
