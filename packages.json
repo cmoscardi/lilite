@@ -48,7 +48,7 @@
   "icon_url":"/static/images/vagrant-48.png",
   "installers": {"apt": {"pre_install": [
                           "apt-get -y install wget",
-                          "wget https://releases.hashicorp.com/vagrant/1.9.5/vagrant_1.9.5_x86_64.deb?_ga=2.218324825.1773379123.1496771428-252725762.1496771428",
+                          "wget https://releases.hashicorp.com/vagrant/1.9.5/vagrant_1.9.5_x86_64.deb",
                           "dpkg -i vagrant_1.9.5_x86_64.deb",
                           "rm vagrant_1.9.5_x86_64.deb"],
                          "package_name": "",
