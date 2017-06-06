@@ -24,8 +24,8 @@ def load_json():
 
   return packages
 
-def init_db():
-    engine = create_engine('sqlite:///test.db', convert_unicode=True)
+def init_db(uri):
+    engine = create_engine(uri, convert_unicode=True)
     db_session = scoped_session(sessionmaker(autocommit=False,
                                              autoflush=False,
                                              bind=engine))
@@ -75,5 +75,10 @@ def main(db_session, Package, InstallMethod):
   parse_packages(j, db_session, Package, InstallMethod)
 
 if __name__ == "__main__":
-  db_session, Package, InstallMethod = init_db()
+  import sys
+  if len(sys.argv) > 1:
+    uri = sys.argv[1]
+  else:
+    uri = 'sqlite:///test.db'
+  db_session, Package, InstallMethod = init_db(uri)
   main(db_session, Package, InstallMethod)
