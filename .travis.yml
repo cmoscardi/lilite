@@ -16,11 +16,11 @@ services: docker
 env:
   matrix:
   - INSTANCE=ubuntu:14.04
-  - INSTANCE=ubuntu:15.04
   - INSTANCE=ubuntu:16.04
-  - INSTANCE=ubuntu:17.04
-  - INSTANCE=debian:jessie
-  - INSTANCE=debian:wheezy
+  #- INSTANCE=ubuntu:15.04
+  #- INSTANCE=ubuntu:17.04
+  #- INSTANCE=debian:jessie
+  #- INSTANCE=debian:wheezy
 
 before_script:
   - rm -f Dockerfile
