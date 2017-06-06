@@ -38,4 +38,4 @@ def register_package_creator(app,
             weird.append((method.pre_install, method.package_name, method.post_install))
         path = "script.sh"
         resp= render_template(path, standard=standard, weird=weird)
-        return Response(resp, mimetype="text")
+        return Response(resp, mimetype="text/plain")
