@@ -9,7 +9,7 @@ import seed_packages as sp
 
 
 def main():
-    db_session, Package, InstallMethod = sp.init_db()
+    db_session, Package, InstallMethod = sp.init_db('sqlite:///test.db')
     sp.main(db_session, Package, InstallMethod)
     packages = [p['name'] for p in sp.load_json()]
     app, client = create_app_client()
