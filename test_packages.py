@@ -24,7 +24,7 @@ def main():
         test_f.write(resp) 
  
 def create_app_client():
-    db_session, Package, InstallMethod = sp.init_db()
+    db_session, Package, InstallMethod = sp.init_db('sqlite:///test.db')
     app = Flask(__name__)
     client = FlaskClient(app)
     register_package_creator(app,
