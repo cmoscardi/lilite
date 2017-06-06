@@ -14,7 +14,7 @@ def main():
     packages = [p['name'] for p in sp.load_json()]
     app, client = create_app_client()
 
-    version = os.environ.get("INSTANCE").split(":")[0]
+    version = os.environ.get("INSTANCE").split(":")[0] + "_test"
     form = {"version": version,
             "packages": packages}
     resp, code, headers = client.post("/get_installer", data=form)
