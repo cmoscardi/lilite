@@ -14,9 +14,9 @@
   "installers": {"ubuntu": {"pre_install": ["apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6",
                                             "fnames=`ls /etc/*-release`",
                                             "for f in $fnames; do source $f; done",
-                                            "echo ==========; echo $VERSION_CODENAME; echo ============;",
+                                            "echo ==========; echo $DISTRIB_CODENAME; echo ============;",
 
-                                            " echo \"deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu ${VERSION_CODENAME}/mongodb-org/3.4 multiverse\" | tee /etc/apt/sources.list.d/mongodb-org-3.4.list",
+                                            " echo \"deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu ${DISTRIB_CODENAME}/mongodb-org/3.4 multiverse\" | tee /etc/apt/sources.list.d/mongodb-org-3.4.list",
                                             "apt-get update"],
                             "package_name": "mongodb-org",
                             "post_install": []}}
@@ -65,9 +65,9 @@
                                          "apt-get -y install software-properties-common python-software-properties",
                                          "apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9",
                                          "echo ====<>=====",
-                                         "echo \"deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/${ID} ${VERSION_CODENAME}/\"",
+                                         "echo \"deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/${ID} ${DISTRIB_CODENAME}/\"",
                                          "echo ====<>=====",
-                                         "add-apt-repository \"deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/${ID} ${VERSION_CODENAME}/\"",
+                                         "add-apt-repository \"deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/${ID} ${DISTRIB_CODENAME}/\"",
                                          "apt-get update"],
                          "package_name": "r-base",
                          "post_install": []}}
