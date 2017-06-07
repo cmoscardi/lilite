@@ -45,8 +45,15 @@ def print_stderr(s):
   print >>sys.stderr, s
 
 def parse_packages(package_list, db_session, Package, InstallMethod):
-  packages = Package.query.delete()
-  install_methods = InstallMethod.query.delete()
+  packages = db_session.query(Package).delete()
+  install_methods = db_session.query(InstallMethod).delete()
+  try:
+    db_session.commit()
+  except Exception as e:
+    print_stderr("FAILED!")
+    print_stderr(str(e))
+    db_session.rollback()
+
   print_stderr( "======" * 3)
   print_stderr( "deleting {} packages".format(packages))
   print_stderr( "deleting {} install_methods".format(install_methods))

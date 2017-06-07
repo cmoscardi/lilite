@@ -11,7 +11,7 @@ def register_models(Base):
         description = Column(Text())
         icon_url = Column(String(100))
         
-        install_methods = relationship("InstallMethod")
+        install_methods = relationship("InstallMethod", cascade="all, delete-orphan", single_parent=True)
 
 
     class InstallMethod(Base):
@@ -27,7 +27,7 @@ def register_models(Base):
         package_name = Column(String(80))
         post_install = Column(Text())
 
-        package_id = Column(Integer, ForeignKey('packages.id'))
+        package_id = Column(Integer, ForeignKey('packages.id', onupdate="CASCADE", ondelete="CASCADE"))
         package = relationship("Package", back_populates="install_methods")
 
     return Package, InstallMethod
