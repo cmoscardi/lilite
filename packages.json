@@ -7,6 +7,13 @@
   "installers": {"apt": {"pre_install": [], "package_name": "build-essential", "post_install": []}}
 },
 {
+  "name": "SQLite",
+  "description": "SQLite Database",
+  "category": "Databases",
+  "icon_url":"/static/images/sqlite-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "sqlite", "post_install": []}}
+},
+{
   "name": "MongoDB",
   "description": "MongoDB",
   "category": "Databases",
