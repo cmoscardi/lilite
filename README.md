@@ -2,7 +2,7 @@
 
 [http://www.lilite.co](http://www.lilite.co)
 
-[![Build Status](https://travis-ci.org/cmoscardi/package-installer.svg?branch=master)](https://travis-ci.org/cmoscardi/package-installer)
+[![Build Status](https://travis-ci.org/cmoscardi/lilite.svg?branch=master)](https://travis-ci.org/cmoscardi/lilite)
 
 
 ## Supported Linux versions
