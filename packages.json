@@ -11,7 +11,10 @@
   "description": "Valve Software's game center",
   "category": "Games",
   "icon_url":"/static/images/steam-48.png",
-  "installers": {"apt": {"pre_install": ["add-apt-repository multiverse"], "package_name": "steam", "post_install": []}}
+  "installers": {"apt": {"pre_install": ["add-apt-repository multiverse",
+                                         "apt-get -y install software-properties-common python-software-properties"],
+                         "package_name": "steam",
+                         "post_install": []}}
 },
 {
   "name": "Skype",
@@ -19,6 +22,7 @@
   "category": "Messaging",
   "icon_url":"/static/images/skype-48.png",
   "installers": {"apt": {"pre_install": ["dpkg --add-architecture i386",
+                                         "apt-get -y install software-properties-common python-software-properties",
                                          "add-apt-repository \"deb http://archive.canonical.com/ $(lsb_release -sc) partner\"",
                                          "apt-get update"], "package_name": "skype", "post_install": []}}
 },
