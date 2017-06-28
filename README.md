@@ -1,6 +1,6 @@
 # Lilite: A Linux Package Auto-installer
 
-[http://www.lilite.co](http://www.lilite.co)
+[https://www.lilite.co](https://www.lilite.co)
 
 [![Build Status](https://travis-ci.org/cmoscardi/lilite.svg?branch=master)](https://travis-ci.org/cmoscardi/lilite)
 
