@@ -12,6 +12,8 @@
   "category": "Games",
   "icon_url":"/static/images/steam-48.png",
   "installers": {"apt": {"pre_install": ["apt-get -y install software-properties-common python-software-properties",
+                                         "dpkg --add-architecture i386",
+                                         "apt-get update",
                                          "add-apt-repository multiverse"],
                          "package_name": "steam",
                          "post_install": []}}
