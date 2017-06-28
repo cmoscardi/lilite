@@ -198,5 +198,13 @@
                                          "apt-key add linux_signing_key.pub",
                                          "rm linux_signing_key.pub; apt update"],
                          "package_name": "google-chrome-stable", "post_install": []}}
+},
+{
+  "name": "7zip",
+  "description": "7zip",
+  "category": "Browsers",
+  "icon_url": "/static/images/7zip-48.png",
+  "installers": {"apt": {"pre_install": [],
+                         "package_name": "p7zip-full", "post_install": []}}
 }
 ]
