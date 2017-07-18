@@ -19,7 +19,8 @@
                                          "echo -e 'steam\tsteam/question\tselect\tI AGREE'",
                                          "echo -e 'steam\tsteam/question\tselect\tI AGREE' | debconf-set-selections",
                                          "echo -e 'steam\tsteam/license\tnote\t' | debconf-set-selections",
-                                         "echo -e 'steam\tsteam/purge\tnote\t' | debconf-set-selections"],
+                                         "echo -e 'steam\tsteam/purge\tnote\t' | debconf-set-selections",
+                                         "debconf-get-selections | grep steam"],
                          "package_name": "steam steamcmd",
                          "post_install": []}}
 },
