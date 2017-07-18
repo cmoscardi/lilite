@@ -16,9 +16,9 @@
                                          "apt-get update",
                                          "add-apt-repository multiverse", 
                                          "apt purge steam steamcmd",
-                                         "echo 'steam steam/purge note' | debconf-set-selections",
-                                         "echo 'steam steam/license note' | debconf-set-selections",
-                                         "echo 'steam steam/question  select  I AGREE' | debconf-set-selections"],
+                                         "echo '* steam/question: I AGREE' | debconf-set-selections",
+                                         "echo '* steam/license:' | debconf-set-selections",
+                                         "echo '  steam/purge:' | debconf-set-selections"],
                          "package_name": "steam steamcmd",
                          "post_install": []}}
 },
