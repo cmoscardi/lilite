@@ -7,6 +7,20 @@
   "installers": {"apt": {"pre_install": [], "package_name": "build-essential", "post_install": []}}
 },
 {
+  "name": "Gzip",
+  "description": "Gzip",
+  "category": "Tools",
+  "icon_url":"/static/images/gzip-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "gzip", "post_install": []}}
+},
+{
+  "name": "Zip/Unzip",
+  "description": "They are separate apt packages",
+  "category": "Tools",
+  "icon_url":"/static/images/zip-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "zip unzip", "post_install": []}}
+},
+{
   "name": "Steam",
   "description": "Valve Software's game center",
   "category": "Games",
@@ -202,7 +216,7 @@
 {
   "name": "7zip",
   "description": "7zip",
-  "category": "Browsers",
+  "category": "Tools",
   "icon_url": "/static/images/7zip-48.png",
   "installers": {"apt": {"pre_install": [],
                          "package_name": "p7zip-full", "post_install": []}}
