@@ -31,9 +31,10 @@
   "category": "Messaging",
   "icon_url":"/static/images/skype-48.png",
   "installers": {"apt": {"pre_install": ["dpkg --add-architecture i386",
+                                         "apt-get update",
                                          "apt-get -y install software-properties-common python-software-properties",
-                                         "add-apt-repository \"deb http://archive.canonical.com/ $(lsb_release -sc) partner\"",
-                                         "apt-get update"], "package_name": "skype", "post_install": []}}
+                                         "wget https://go.skype.com/linux.deb skype.deb",
+                                         "dpkg -i skype.deb"], "package_name": "skype", "post_install": ["rm skype.deb"]}}
 },
 {
   "name": "SQLite",
