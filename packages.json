@@ -33,7 +33,7 @@
   "installers": {"apt": {"pre_install": ["dpkg --add-architecture i386",
                                          "apt-get update",
                                          "apt-get -y install software-properties-common python-software-properties",
-                                         "wget -O skype.deb https://go.skype.com/linux.deb",
+                                         "wget -O skype.deb https://go.skype.com/skypeforlinux-64.deb",
                                          "dpkg -i skype.deb"], "package_name": "skype", "post_install": ["rm skype.deb"]}}
 },
 {
