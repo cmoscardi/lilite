@@ -11,7 +11,7 @@
   "description": "Valve Software's game center",
   "category": "Games",
   "icon_url":"/static/images/steam-48.png",
-  "installers": {"apt": {"pre_install": ["apt-get -y install software-properties-common python-software-properties debconf-utils",
+  "installers": {"apt": {"pre_install": ["apt-get -y install wget software-properties-common python-software-properties debconf-utils",
                                          "dpkg --add-architecture i386",
                                          "apt-get update",
                                          "add-apt-repository multiverse", 
