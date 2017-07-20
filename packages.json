@@ -34,7 +34,7 @@
                                          "apt-get update",
                                          "apt-get -y install software-properties-common python-software-properties apt-transport-https",
                                          "wget -O skype.deb https://go.skype.com/skypeforlinux-64.deb",
-                                         "dpkg -i skype.deb"], "package_name": "skype", "post_install": ["rm skype.deb"]}}
+                                         "dpkg -i skype.deb"], "package_name": "", "post_install": ["rm skype.deb"]}}
 },
 {
   "name": "SQLite",
