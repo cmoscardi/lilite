@@ -217,7 +217,7 @@
   "name": "7zip",
   "description": "7zip",
   "category": "Tools",
-  "icon_url": "/static/images/7zip-48.png",
+  "icon_url": "/static/images/7z-48.png",
   "installers": {"apt": {"pre_install": [],
                          "package_name": "p7zip-full", "post_install": []}}
 }
