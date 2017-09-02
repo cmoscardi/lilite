@@ -7,6 +7,20 @@
   "installers": {"apt": {"pre_install": [], "package_name": "build-essential", "post_install": []}}
 },
 {
+  "name": "Inkscape",
+  "description": "Inkscape",
+  "category": "Graphics",
+  "icon_url":"/static/images/inkscape-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "inkscape", "post_install": []}}
+},
+{
+  "name": "GIMP",
+  "description": "GIMP",
+  "category": "Graphics",
+  "icon_url":"/static/images/gimp-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "gimp", "post_install": []}}
+},
+{
   "name": "Gzip",
   "description": "Gzip",
   "category": "Tools",
