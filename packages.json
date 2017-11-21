@@ -273,5 +273,16 @@
                                          ],
                          "package_name": "qbittorrent",
                          "post_install": []}}
+},
+{
+  "name": "Android Studio",
+  "description": "The Official IDE for Android",
+  "category": "Programming",
+  "icon_url":"/static/images/android-studio-48.png",
+  "installers": {"apt": {"pre_install": ["add-apt-repository ppa:maarten-fonville/android-studio",
+                                         "apt-get update"
+                                         ],
+                         "package_name": "android-studio",
+                         "post_install": []}}
 }
 ]
