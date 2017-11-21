@@ -262,5 +262,16 @@
                                          ],
                          "package_name": "code",
                          "post_install": []}}
+},
+{
+  "name": "qBittorrent",
+  "description": "An open-source software alternative to µTorrent",
+  "category": "Tools",
+  "icon_url":"/static/images/qbittorrent-48.png",
+  "installers": {"apt": {"pre_install": ["add-apt-repository ppa:qbittorrent-team/qbittorrent-stable",
+                                         "apt-get update"
+                                         ],
+                         "package_name": "qbittorrent",
+                         "post_install": []}}
 }
 ]
