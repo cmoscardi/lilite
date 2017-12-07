@@ -320,5 +320,14 @@
                                             "apt-get update"],
                             "package_name": "",
                             "post_install": ["rm atom.deb"]}}
+},
+{
+  "name": "Zsh",
+  "description": "An interactive, powerful and scriptable shell",
+  "category": "Productivity",
+  "icon_url":"/static/images/zsh-48.png",
+  "installers": {"apt": {"pre_install": [""],
+                           "package_name": "zsh zsh-common",
+                           "post_install": []}}
 }
 ]
