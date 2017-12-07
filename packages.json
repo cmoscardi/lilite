@@ -308,5 +308,17 @@
                                             "apt-get update"],
                             "package_name": "",
                             "post_install": ["rm mailspring.deb"]}}
+},
+{
+  "name": "Atom",
+  "description": "A hackable text editor for the 21st Century",
+  "category": "Editors",
+  "icon_url":"/static/images/atom-48.png",
+  "installers": {"debian": {"pre_install": ["apt install -y wget",
+                                            "wget https://atom.io/download/deb -O 'atom.deb'",
+                                            "dpkg -i atom.deb",
+                                            "apt-get update"],
+                            "package_name": "",
+                            "post_install": ["rm atom.deb"]}}
 }
 ]
