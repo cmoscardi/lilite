@@ -329,5 +329,15 @@
   "installers": {"apt": {"pre_install": [""],
                            "package_name": "zsh zsh-common",
                            "post_install": []}}
+},
+{
+  "name": "Oh My Zsh",
+  "description": "Oh My Zsh is an open source, community-driven framework for managing your zsh configuration",
+  "category": "Productivity",
+  "icon_url":"/static/images/oh-my-zsh-48.png",
+  "installers": {"apt": {"pre_install": ["apt-get install zsh zsh-common",
+    "sh -c '$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)'"],
+                           "package_name": "",
+                           "post_install": []}}
 }
 ]
