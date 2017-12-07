@@ -296,5 +296,17 @@
                                             "apt-get update"],
                             "package_name": "",
                             "post_install": ["rm gitkraken-amd64.deb"]}}
+},
+{
+  "name": "Mailspring",
+  "description": "An email client for Windows, Mac and Linux",
+  "category": "Productivity",
+  "icon_url":"/static/images/mailspring-48.png",
+  "installers": {"debian": {"pre_install": ["apt install -y wget",
+                                            "wget https://updates.getmailspring.com/download?platform=linuxDeb -O 'mailspring.deb'",
+                                            "dpkg -i mailspring.deb",
+                                            "apt-get update"],
+                            "package_name": "",
+                            "post_install": ["rm mailspring.deb"]}}
 }
 ]
