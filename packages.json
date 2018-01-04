@@ -314,7 +314,7 @@
   "description": "A hackable text editor for the 21st Century",
   "category": "Editors",
   "icon_url":"/static/images/atom-48.png",
-  "installers": {"debian": {"pre_install": ["apt install -y wget",
+  "installers": {"debian": {"pre_install": ["apt install -y wget git",
                                             "wget https://atom.io/download/deb -O 'atom.deb'",
                                             "dpkg -i atom.deb",
                                             "apt-get update"],
@@ -335,7 +335,7 @@
   "description": "Oh My Zsh is an open source, community-driven framework for managing your zsh configuration",
   "category": "Productivity",
   "icon_url":"/static/images/oh-my-zsh-48.png",
-  "installers": {"apt": {"pre_install": ["apt-get install zsh zsh-common",
+  "installers": {"apt": {"pre_install": ["apt-get install -y git zsh zsh-common",
     "sh -c '$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)'"],
                            "package_name": "",
                            "post_install": []}}
