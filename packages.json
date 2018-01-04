@@ -336,7 +336,8 @@
   "category": "Productivity",
   "icon_url":"/static/images/oh-my-zsh-48.png",
   "installers": {"apt": {"pre_install": ["apt-get install -y git zsh zsh-common",
-    "sh -c '$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)'"],
+    "sh -c '$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)'",
+    "cat install.sh"],
                            "package_name": "",
                            "post_install": []}}
 }
