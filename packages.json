@@ -221,10 +221,13 @@
   "category": "Browsers",
   "icon_url": "https://maxcdn.icons8.com/Color/PNG/48/Logos/chrome-48.png",
   "installers": {"apt": {"pre_install": ["apt install -y wget",
-                                         "echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' >> /etc/apt/sources.list",
-                                         "wget https://dl.google.com/linux/linux_signing_key.pub",
-                                         "apt-key add linux_signing_key.pub",
-                                         "rm linux_signing_key.pub; apt update"],
+                                         "if [ \"$VERSION\" = \"14.04\" ]; then",
+                                         "  echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' >> /etc/apt/sources.list",
+                                         "  wget https://dl.google.com/linux/linux_signing_key.pub",
+                                         "  apt-key add linux_signing_key.pub",
+                                         "  rm linux_signing_key.pub; apt update",
+                                         "fi"
+                                        ],
                          "package_name": "google-chrome-stable", "post_install": []}}
 },
 {
