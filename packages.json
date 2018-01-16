@@ -284,5 +284,61 @@
                                          ],
                          "package_name": "android-studio",
                          "post_install": []}}
+},
+{
+  "name": "GitKraken",
+  "description": "A polished Git GUI for Windows, Mac and Linux",
+  "category": "Productivity",
+  "icon_url":"/static/images/gitkraken-48.png",
+  "installers": {"debian": {"pre_install": ["apt install -y wget",
+                                            "wget https://release.gitkraken.com/linux/gitkraken-amd64.deb",
+                                            "dpkg -i gitkraken-amd64.deb",
+                                            "apt-get update"],
+                            "package_name": "",
+                            "post_install": ["rm gitkraken-amd64.deb"]}}
+},
+{
+  "name": "Mailspring",
+  "description": "An email client for Windows, Mac and Linux",
+  "category": "Productivity",
+  "icon_url":"/static/images/mailspring-48.png",
+  "installers": {"debian": {"pre_install": ["apt install -y wget",
+                                            "wget https://updates.getmailspring.com/download?platform=linuxDeb -O 'mailspring.deb'",
+                                            "dpkg -i mailspring.deb",
+                                            "apt-get update"],
+                            "package_name": "",
+                            "post_install": ["rm mailspring.deb"]}}
+},
+{
+  "name": "Atom",
+  "description": "A hackable text editor for the 21st Century",
+  "category": "Editors",
+  "icon_url":"/static/images/atom-48.png",
+  "installers": {"debian": {"pre_install": ["apt install -y wget git",
+                                            "wget https://atom.io/download/deb -O 'atom.deb'",
+                                            "dpkg -i atom.deb",
+                                            "apt-get update"],
+                            "package_name": "",
+                            "post_install": ["rm atom.deb"]}}
+},
+{
+  "name": "Zsh",
+  "description": "An interactive, powerful and scriptable shell",
+  "category": "Productivity",
+  "icon_url":"/static/images/zsh-48.png",
+  "installers": {"apt": {"pre_install": [""],
+                           "package_name": "zsh zsh-common",
+                           "post_install": []}}
+},
+{
+  "name": "Oh My Zsh",
+  "description": "Oh My Zsh is an open source, community-driven framework for managing your zsh configuration",
+  "category": "Productivity",
+  "icon_url":"/static/images/oh-my-zsh-48.png",
+  "installers": {"apt": {"pre_install": ["apt-get install -y git zsh zsh-common",
+    "sh -c '$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)'",
+    "cat install.sh"],
+                           "package_name": "",
+                           "post_install": []}}
 }
 ]
