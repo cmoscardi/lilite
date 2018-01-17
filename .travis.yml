@@ -7,9 +7,6 @@ python:
 
 install: "pip install -r requirements.txt"
 
-branches:
-  only:
-    - master
 
 services: docker
 
