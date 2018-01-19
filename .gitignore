@@ -1,0 +1,9 @@
+test.db
+*.pyc
+*.swp
+*.swp
+*.pyc
+
+test_script.sh
+
+*.nogit
