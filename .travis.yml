@@ -7,9 +7,6 @@ python:
 
 install: "pip install -r requirements.txt"
 
-branches:
-  only:
-    - master
 
 services: docker
 
@@ -22,15 +19,4 @@ env:
   #- INSTANCE=debian:jessie
   #- INSTANCE=debian:wheezy
 
-before_script:
-  - rm -f Dockerfile
-  - echo "FROM $INSTANCE" >> Dockerfile
-  - echo "WORKDIR /src" >> Dockerfile
-  - echo "COPY test_script.sh /src" >> Dockerfile
-  - echo "COPY test_script.sh /src" >> Dockerfile
-  - echo "RUN chmod +x /src/test_script.sh" >> Dockerfile
-  - echo "RUN /src/test_script.sh" >> Dockerfile
-  - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
-  - python test_packages.py
-
-script: docker build .
+script: ./build.sh
