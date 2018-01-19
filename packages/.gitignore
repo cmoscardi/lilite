@@ -1,0 +1,5 @@
+test.db
+*.swp
+*.pyc
+
+test_script.sh

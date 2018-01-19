@@ -1,0 +1,353 @@
+[
+{
+  "name": "Build-Essential",
+  "description": "Build-Essential",
+  "category": "Programming",
+  "icon_url":"/static/images/gcc-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "build-essential", "post_install": []}}
+},
+{
+  "name": "Inkscape",
+  "description": "Inkscape",
+  "category": "Graphics",
+  "icon_url":"/static/images/inkscape-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "inkscape", "post_install": []}}
+},
+{
+  "name": "GIMP",
+  "description": "GIMP",
+  "category": "Graphics",
+  "icon_url":"/static/images/gimp-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "gimp", "post_install": []}}
+},
+{
+  "name": "Gzip",
+  "description": "Gzip",
+  "category": "Tools",
+  "icon_url":"/static/images/gzip-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "gzip", "post_install": []}}
+},
+{
+  "name": "Zip/Unzip",
+  "description": "They are separate apt packages",
+  "category": "Tools",
+  "icon_url":"/static/images/zip-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "zip unzip", "post_install": []}}
+},
+{
+  "name": "Steam",
+  "description": "Valve Software's game center",
+  "category": "Games",
+  "icon_url":"/static/images/steam-48.png",
+  "installers": {"apt": {"pre_install": ["apt-get -y install curl konsole zenity wget software-properties-common python-software-properties debconf-utils",
+                                         "dpkg --add-architecture i386",
+                                         "apt-get update",
+                                         "add-apt-repository multiverse", 
+                                         "apt purge steam steamcmd || exit 0",
+                                         "echo -e 'steam\tsteam/question\tselect\tI AGREE' | debconf-set-selections",
+                                         "echo -e 'steam\tsteam/license\tnote\t' | debconf-set-selections",
+                                         "echo -e 'steam\tsteam/purge\tnote\t' | debconf-set-selections",
+                                         "wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb",
+                                         "dpkg -i steam.deb"
+                                         ],
+                         "package_name": "",
+                         "post_install": ["rm steam.deb"]}}
+},
+{
+  "name": "Skype",
+  "description": "Microsoft's video chat platform",
+  "category": "Messaging",
+  "icon_url":"/static/images/skype-48.png",
+  "installers": {"apt": {"pre_install": ["dpkg --add-architecture i386",
+                                         "apt-get update",
+                                         "apt-get -y install software-properties-common python-software-properties apt-transport-https",
+                                         "wget -O skype.deb https://go.skype.com/skypeforlinux-64.deb",
+                                         "dpkg -i skype.deb"], "package_name": "", "post_install": ["rm skype.deb"]}}
+},
+{
+  "name": "SQLite",
+  "description": "SQLite Database",
+  "category": "Databases",
+  "icon_url":"/static/images/sqlite-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "sqlite", "post_install": []}}
+},
+{
+  "name": "MongoDB",
+  "description": "MongoDB",
+  "category": "Databases",
+  "icon_url":"/static/images/mongodb-48.png",
+  "installers": {"ubuntu": {"pre_install": ["apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6",
+                                            "fnames=`ls /etc/*-release`",
+                                            "for f in $fnames; do source $f; done",
+                                            "echo ==========; echo $DISTRIB_CODENAME; echo ============;",
+
+                                            " echo \"deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu ${DISTRIB_CODENAME}/mongodb-org/3.4 multiverse\" | tee /etc/apt/sources.list.d/mongodb-org-3.4.list",
+                                            "apt-get update"],
+                            "package_name": "mongodb-org",
+                            "post_install": []}}
+},
+{ 
+  "name": "Slack",
+  "description": "Slack",
+  "category": "Messaging",
+  "icon_url":"/static/images/slack-48.png",
+  "installers": {"apt": {"pre_install": [
+                          "apt-get -y install wget",
+                          "apt-get -y install gvfs-bin",
+                          "apt-get -y install apt-transport-https",
+                          "apt-get -y install libxss1",
+                          "apt-get -y install libappindicator1",
+                          "apt-get -y install libcurl3",
+                          "apt-get -y install gir1.2-gnomekeyring-1.0",
+                          "wget https://downloads.slack-edge.com/linux_releases/slack-desktop-2.6.2-amd64.deb",
+                          "dpkg -i slack-desktop-2.6.2-amd64.deb",
+                          "rm slack-desktop-2.6.2-amd64.deb"],
+                         "package_name": "",
+                         "post_install": []}}
+
+},
+{ 
+  "name": "Vagrant",
+  "description": "Vagrant",
+  "category": "Programming",
+  "icon_url":"/static/images/vagrant-48.png",
+  "installers": {"apt": {"pre_install": [
+                          "apt-get -y install wget",
+                          "wget https://releases.hashicorp.com/vagrant/1.9.5/vagrant_1.9.5_x86_64.deb",
+                          "dpkg -i vagrant_1.9.5_x86_64.deb",
+                          "rm vagrant_1.9.5_x86_64.deb"],
+                         "package_name": "",
+                         "post_install": []}}
+
+},
+{
+  "name": "VLC",
+  "description": "VLC Media Player",
+  "category": "Media",
+  "icon_url":"/static/images/vlc-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "vlc", "post_install": []}}
+},
+{
+  "name": "PostgreSQL",
+  "description": "PostgreSQL database",
+  "category": "Databases",
+  "icon_url":"/static/images/postgres-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "postgresql postgresql-contrib", "post_install": []}}
+},
+{
+  "name": "Git",
+  "description": "Git",
+  "category": "Programming",
+  "icon_url":"/static/images/git-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "git", "post_install": []}}
+},
+{
+  "name": "R",
+  "description": "R",
+  "category": "Programming",
+  "icon_url":"/static/images/r-48.png",
+  "installers": {"apt": {"pre_install": ["fnames=`ls /etc/*-release`",
+                                         "for f in $fnames; do source $f; done",
+                                         "apt-get -y install software-properties-common python-software-properties",
+                                         "apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9",
+                                         "echo ====<>=====",
+                                         "echo \"deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/${ID} ${DISTRIB_CODENAME}/\"",
+                                         "echo ====<>=====",
+                                         "add-apt-repository \"deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/${ID} ${DISTRIB_CODENAME}/\"",
+                                         "apt-get update"],
+                         "package_name": "r-base",
+                         "post_install": []}}
+},
+{
+  "name": "Vim",
+  "description": "Vim",
+  "category": "Editors",
+  "icon_url":"/static/images/vim-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "vim", "post_install": []}}
+},
+{
+  "name": "Emacs",
+  "description": "Emacs",
+  "category": "Editors",
+  "icon_url":"/static/images/emacs-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "emacs", "post_install": []}}
+},
+{
+  "name": "Tmux",
+  "description": "Tmux",
+  "category": "Productivity",
+  "icon_url":"/static/images/tmux-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "tmux", "post_install": []}}
+},
+{
+  "name": "Screen",
+  "description": "GNU Screen",
+  "category": "Productivity",
+  "icon_url":"/static/images/gnu-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "screen", "post_install": []}}
+},
+{
+  "name": "Conda",
+  "description": "Miniconda installer",
+  "category": "Programming",
+  "icon_url":"/static/images/conda-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "tmux", "post_install": []}}
+},
+{
+  "name": "Eclipse",
+  "description": "Eclipse",
+  "category": "Programming",
+  "icon_url":"/static/images/eclipse-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "eclipse", "post_install": []}}
+},
+{
+  "name": "Firefox",
+  "description": "Firefox",
+  "category": "Browsers",
+  "icon_url":"/static/images/firefox-48.png",
+  "installers": {"ubuntu": {"pre_install": [], "package_name": "firefox", "post_install": []},
+                 "debian": {"pre_install": ["echo deb http://mozilla.debian.net/ jessie-backports firefox-release >> /etc/apt/sources.list.d/debian-mozilla.list",
+                                            "apt-get install wget",
+                                            "wget mozilla.debian.net/pkg-mozilla-archive-keyring_1.1_all.deb",
+                                            "dpkg -i pkg-mozilla-archive-keyring_1.1_all.deb",
+                                            "apt-get update",
+                                            "apt-get install -t jessie-backports firefox"],
+                            "package_name": "firefox",
+                            "post_install": []}}
+},
+{
+  "name": "Chrome",
+  "description": "Chrome",
+  "category": "Browsers",
+  "icon_url": "https://maxcdn.icons8.com/Color/PNG/48/Logos/chrome-48.png",
+  "installers": {"apt": {"pre_install": ["apt install -y wget",
+                                         "echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' >> /etc/apt/sources.list",
+                                         "wget https://dl.google.com/linux/linux_signing_key.pub",
+                                         "apt-key add linux_signing_key.pub",
+                                         "rm linux_signing_key.pub; apt update",
+                                         "echo ========================",
+                                         "echo ========================",
+                                         "echo ========================",
+                                         "cat /etc/apt/sources.list",
+                                         "echo ========================",
+                                         "echo ========================",
+                                         "echo ========================"],
+                         "package_name": "google-chrome-stable", "post_install": []}}
+},
+{
+  "name": "7zip",
+  "description": "7zip",
+  "category": "Tools",
+  "icon_url": "/static/images/7z-48.png",
+  "installers": {"apt": {"pre_install": [],
+                         "package_name": "p7zip-full", "post_install": []}}
+},
+{
+  "name": "Sublime Text 3",
+  "description": "A versatile text editor for programmers",
+  "category": "Editors",
+  "icon_url":"/static/images/sublime-48.png",
+  "installers": {"apt": {"pre_install": ["wget https://download.sublimetext.com/sublimehq-pub.gpg",
+					 "apt-key add sublimehq-pub.gpg",
+					 "rm sublimehq-pub.gpg",
+                                         "echo 'deb https://download.sublimetext.com/ apt/stable/' >> /etc/apt/sources.list.d/sublime-text.list",
+                                         "apt-get update"
+                                         ],
+                         "package_name": "sublime-text",
+                         "post_install": []}}
+},
+{
+  "name": "Visual Studio Code",
+  "description": "Visual Studio Code is a lightweight but powerful source code editor by Microsoft",
+  "category": "Editors",
+  "icon_url":"/static/images/vscode-48.png",
+  "installers": {"apt": {"pre_install": ["curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > vscode.gpg",
+					 "apt-key add vscode.gpg",
+					 "rm vscode.gpg",
+                                         "echo 'deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main' > /etc/apt/sources.list.d/vscode.list",
+                                         "apt-get update"
+                                         ],
+                         "package_name": "code",
+                         "post_install": []}}
+},
+{
+  "name": "qBittorrent",
+  "description": "An open-source software alternative to µTorrent",
+  "category": "Tools",
+  "icon_url":"/static/images/qbittorrent-48.png",
+  "installers": {"apt": {"pre_install": ["add-apt-repository ppa:qbittorrent-team/qbittorrent-stable",
+                                         "apt-get update"
+                                         ],
+                         "package_name": "qbittorrent",
+                         "post_install": []}}
+},
+{
+  "name": "Android Studio",
+  "description": "The Official IDE for Android",
+  "category": "Programming",
+  "icon_url":"/static/images/android-studio-48.png",
+  "installers": {"apt": {"pre_install": ["add-apt-repository ppa:maarten-fonville/android-studio",
+                                         "apt-get update"
+                                         ],
+                         "package_name": "android-studio",
+                         "post_install": []}}
+},
+{
+  "name": "GitKraken",
+  "description": "A polished Git GUI for Windows, Mac and Linux",
+  "category": "Productivity",
+  "icon_url":"/static/images/gitkraken-48.png",
+  "installers": {"debian": {"pre_install": ["apt install -y wget",
+                                            "wget https://release.gitkraken.com/linux/gitkraken-amd64.deb",
+                                            "dpkg -i gitkraken-amd64.deb",
+                                            "apt-get update"],
+                            "package_name": "",
+                            "post_install": ["rm gitkraken-amd64.deb"]}}
+},
+{
+  "name": "Mailspring",
+  "description": "An email client for Windows, Mac and Linux",
+  "category": "Productivity",
+  "icon_url":"/static/images/mailspring-48.png",
+  "installers": {"debian": {"pre_install": ["apt install -y wget",
+                                            "wget https://updates.getmailspring.com/download?platform=linuxDeb -O 'mailspring.deb'",
+                                            "dpkg -i mailspring.deb",
+                                            "apt-get update"],
+                            "package_name": "",
+                            "post_install": ["rm mailspring.deb"]}}
+},
+{
+  "name": "Atom",
+  "description": "A hackable text editor for the 21st Century",
+  "category": "Editors",
+  "icon_url":"/static/images/atom-48.png",
+  "installers": {"debian": {"pre_install": ["apt install -y wget git",
+                                            "wget https://atom.io/download/deb -O 'atom.deb'",
+                                            "dpkg -i atom.deb",
+                                            "apt-get update"],
+                            "package_name": "",
+                            "post_install": ["rm atom.deb"]}}
+},
+{
+  "name": "Zsh",
+  "description": "An interactive, powerful and scriptable shell",
+  "category": "Productivity",
+  "icon_url":"/static/images/zsh-48.png",
+  "installers": {"apt": {"pre_install": [""],
+                           "package_name": "zsh zsh-common",
+                           "post_install": []}}
+},
+{
+  "name": "Oh My Zsh",
+  "description": "Oh My Zsh is an open source, community-driven framework for managing your zsh configuration",
+  "category": "Productivity",
+  "icon_url":"/static/images/oh-my-zsh-48.png",
+  "installers": {"apt": {"pre_install": ["apt-get install -y git zsh zsh-common",
+    "git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh",
+    "[ -f ~/.zshrc ] && cp ~/.zshrc ~/.zshrc.orig",
+    "cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc",
+    "-z ${TERM+x} && chsh -s /bin/zsh || echo 'Not a login shell. Make sure to run chsh later.'"],
+                           "package_name": "",
+                           "post_install": []}}
+}
+]

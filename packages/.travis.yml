@@ -1,0 +1,34 @@
+sudo: required
+dist: trusty
+
+language: python
+python:
+  - "2.7"
+
+install: "pip install -r requirements.txt"
+
+
+services: docker
+
+env:
+  matrix:
+  - INSTANCE=ubuntu:14.04
+  - INSTANCE=ubuntu:16.04
+  #- INSTANCE=ubuntu:15.04
+  #- INSTANCE=ubuntu:17.04
+  #- INSTANCE=debian:jessie
+  #- INSTANCE=debian:wheezy
+
+before_script:
+  - rm -f Dockerfile
+  - echo "FROM $INSTANCE" >> Dockerfile
+  - echo "WORKDIR /src" >> Dockerfile
+  - echo "ENV DEBIAN_FRONTEND noninteractive" >> Dockerfile
+  - echo "COPY test_script.sh /src" >> Dockerfile
+  - echo "COPY test_script.sh /src" >> Dockerfile
+  - echo "RUN chmod +x /src/test_script.sh" >> Dockerfile
+  - echo "RUN /src/test_script.sh" >> Dockerfile
+  - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
+  - python test_packages.py
+
+script: docker build .

@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      .mt15 {
+        margin-top: 15px;
+      }
+    </style>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Lilite provides a list of core packages and gives you an autoinstaller, to make setting up new computers with Linux easy!">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="/static/js/installer.js"></script>
+    <title>Lilite | Linux Core Package Installer</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1> Lilite: A Linux Autoinstaller</h1>
+        {% if not linux_ua %}
+          <div class="alert alert-warning"> You do not appear to be on the linux OS. This site is most useful for linux users. </div>
+        {% endif %}
+        </div>
+      <hr />
+      <form method="GET" action="/get_installer">
+        <div class="row">
+          <h2> Select your linux version </h2>
+          <label>
+            Ubuntu 16.04
+            <input type="radio" name="version" value="ubuntu_16" required />
+          </label>
+          <label>
+            Ubuntu 14.04
+            <input type="radio" name="version" value="ubuntu_14" required />
+          </label>
+          <div class="alert alert-info">
+            More version support coming soon! If you'd like to contribute, you can look here:
+            <a href="https://github.com/cmoscardi/package-installer"> Github project </a>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <h2> Select your packages </h2>
+          {% set max_per_column = 5 %}
+          {% for category, p in packages %}
+            <div class="col-sm-4 col-xs-12">
+            <h3> {{category}} </h3>
+            {% for package in p %}
+              {% set name=package['name'] %}
+              {% set icon=package['icon_url'] %}
+              {% set description=package['icon_url'] %}
+              <div>
+              <input type="checkbox" id="{{name}}" name="packages" value="{{name}}" />
+              <label for="{{name}}" > {{package['name']}}
+                <img height="20" withd="20" src="{{icon}}" />
+              </label>
+              </div>
+            {% endfor %}
+            </div>
+          {% endfor %}
+        </div>
+        <div class="row mt15">
+          <div class="col-sm-8 col-xs-12 col-sm-offset-2 alert alert-info">
+            Don't see a package that you're looking for? Submit an <a href="https://github.com/cmoscardi/package-installer"> issue on Github</a> or email <a href="mailto:packages@lilite.co">packages@lilite.co</a>!
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+            <h2> Install packages </h2>
+            <p> Get your specific link and install package! </p>
+            <input type="submit" class="btn btn-submit" style="font-size: 20px;" value="Install your packages"/>
+          </div>
+          <div style="display: none; border-left: 1px solid black;" id="command-row" class="col-xs-12 col-sm-8">
+          <h3> Copy the following command: </h3>
+          <pre></pre>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-100620007-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+</html>
