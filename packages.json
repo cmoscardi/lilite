@@ -344,7 +344,7 @@
   "icon_url":"/static/images/oh-my-zsh-48.png",
   "installers": {"apt": {"pre_install": ["apt-get install -y git zsh zsh-common",
     "git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh",
-    "cp ~/.zshrc ~/.zshrc.orig",
+    "[ -f ~/.zshrc ] && cp ~/.zshrc ~/.zshrc.orig",
     "cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc",
     "shopt -q login_shell && chsh -s /bin/zsh || echo 'Not a login shell. Make sure to run chsh later.'"],
                            "package_name": "",
