@@ -349,5 +349,17 @@
     "-z ${TERM+x} && chsh -s /bin/zsh || echo 'Not a login shell. Make sure to run chsh later.'"],
                            "package_name": "",
                            "post_install": []}}
+},
+{
+  "name": "Node Version Manager (NVM)",
+  "description": "Simple bash script to manage multiple active node.js versions",
+  "category": "Programming",
+  "icon_url":"/static/images/nvm-48.png",
+  "installers": {"apt": {"pre_install": ["apt-get purge -y nodejs",
+    "export LATEST_NVM_VERSION=`curl -s 'https://api.github.com/repos/creationix/nvm/releases/latest' | grep -P -o '(?<=v)[\\d.][\\d.]*' | head -1`",
+    "curl -o- 'https://raw.githubusercontent.com/creationix/nvm/$LATEST_NVM_VERSION/install.sh'"
+  ],
+                           "package_name": "",
+                           "post_install": []}}
 }
 ]
