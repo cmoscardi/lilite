@@ -13,14 +13,22 @@
 If you're interested in building out support for another distro,
 let me know! Some of the infra for distro-specific install methods is WIP.
 
-## Adding new packages
-Package definitions live in `packages.json`.
+## Contributing
+To contribute, you just need to do two things:
 
-### To add a new package (i.e. contributing)
-Make a new entry in `packages.json` and submit a PR! There are three important fields:
+1. add the instructions on how to install a package
+2. add in the logo
+
+Package definitions live in [packages/packages.json](https://github.com/cmoscardi/lilite/tree/master/packages). Logos live in [static/images](https://github.com/cmoscardi/lilite/tree/master/static/images)
+
+### To add a new package 
+First, make a new entry in `packages/packages.json`. There are three important fields:
 - `pre_install` : List of shell commands to run before installing the package.
 - `package_name` : Name of the package manager's package. This can be empty
                    if you're using a .deb file, for example.
 - `post_install` : List of shell commands to run after the package is installed
                    via package manager.
 
+Second, add two copies of the logo - one "large" (i.e. original size) and one 48x48, PNG format - into static/images
+
+Last, make a PR!
