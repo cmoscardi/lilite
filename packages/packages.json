@@ -309,7 +309,7 @@
   "description": "An email client for Windows, Mac and Linux",
   "category": "Productivity",
   "icon_url":"/static/images/mailspring-48.png",
-  "installers": {"apt": {"pre_install": ["apt install -y wget",
+  "installers": {"apt": {"pre_install": ["apt install -y wget libsecret-1-dev",
                                          "wget https://updates.getmailspring.com/download?platform=linuxDeb -O 'mailspring.deb'",
                                          "dpkg -i mailspring.deb",
                                          "apt-get update"],
