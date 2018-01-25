@@ -341,7 +341,7 @@
   "name": "Oh My Zsh",
   "description": "Oh My Zsh is an open source, community-driven framework for managing your zsh configuration",
   "category": "Productivity",
-  "icon_url":"/static/images/oh-my-zsh-48.png",
+  "icon_url":"/static/images/ohmyzsh-48.png",
   "installers": {"apt": {"pre_install": ["apt-get install -y git zsh zsh-common",
     "git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh",
     "[ -f ~/.zshrc ] && cp ~/.zshrc ~/.zshrc.orig",
