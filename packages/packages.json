@@ -361,5 +361,16 @@
   ],
                            "package_name": "",
                            "post_install": []}}
+},
+{
+  "name": "Go",
+  "description": "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.",
+  "category": "Programming",
+  "icon_url":"/static/images/go-48.png",
+  "installers": {"apt": {"pre_install": ["wget https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh",
+    "bash goinstall.sh --64"
+  ],
+                           "package_name": "",
+                           "post_install": ["rm goinstall.sh"]}}
 }
 ]
