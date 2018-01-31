@@ -367,10 +367,11 @@
   "description": "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.",
   "category": "Programming",
   "icon_url":"/static/images/go-48.png",
-  "installers": {"apt": {"pre_install": ["wget https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh",
-    "bash goinstall.sh --64"
+  "installers": {"apt": {"pre_install": ["add-apt-repository ppa:gophers/archive",
+    "apt update"
   ],
-                           "package_name": "",
-                           "post_install": ["rm goinstall.sh"]}}
+                           "package_name": "golang-1.9-go",
+                           "post_install": ["echo \"export PATH=$PATH:/usr/lib/go-1.9/bin\" >> ~/.profile",
+                            ". ~/.profile"]}}
 }
 ]
