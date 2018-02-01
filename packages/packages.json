@@ -361,5 +361,17 @@
   ],
                            "package_name": "",
                            "post_install": []}}
+},
+{
+  "name": "Etcher",
+  "description": "Burn images to SD cards & USB drives, safely and easily.",
+  "category": "Tools",
+  "icon_url":"/static/images/etcher-48.png",
+  "installers": {"apt": {"pre_install": ["apt install -y libpango1.0-0 libpangox-1.0-0",
+    "curl -s 'https://api.github.com/repos/resin-io/etcher/releases/latest' | grep \"browser_download_url.*amd64.deb\" | cut -d : -f2,3 | tr -d \" | wget -i -",
+    "dpkg -i etcher-electron*.deb"
+  ],
+                           "package_name": "",
+                           "post_install": ["rm etcher-electron*.deb"]}}
 }
 ]
