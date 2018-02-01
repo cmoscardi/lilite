@@ -361,5 +361,24 @@
   ],
                            "package_name": "",
                            "post_install": []}}
+},
+{
+  "name": "rbenv & Ruby Build",
+  "description": "Simple Ruby version management",
+  "category": "Programming",
+  "icon_url":"/static/images/rbenv-48.png",
+  "installers": {"apt": {"pre_install": ["apt-get install -y git",
+    "echo \"Installing rbenv\"",
+    "git clone https://github.com/rbenv/rbenv.git ~/.rbenv",
+    "echo 'export PATH=\"$HOME/.rbenv/bin:$PATH\"' >> ~/.bashrc",
+    "echo 'eval \"$(rbenv init -)\"' >> ~/.bashrc",
+    "echo",
+    "echo \"Installing ruby build\"",
+    "git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build",
+    "echo 'export PATH=\"$HOME/.rbenv/plugins/ruby-build/bin:$PATH\"' >> ~/.bashrc",
+    "echo 'Done! Run rbenv install <RUBY_VERSION> && rbenv global <RUBY_VERSION> to install ruby.'"
+  ],
+                           "package_name": "",
+                           "post_install": []}}
 }
 ]
