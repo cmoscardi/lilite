@@ -2,6 +2,9 @@ from collections import defaultdict
 
 from flask import request, render_template, Response
 
+NULL_SCRIPT="""#!/bin/bash
+echo 'Either no OS version, or no packages, specified.'"""
+
 def register_package_creator(app,
                              db_session,
                              Package,
@@ -11,11 +14,13 @@ def register_package_creator(app,
     @app.route("/get_installer", methods=["GET", "POST"])
     def get_installer():
         if request.method == "POST":
-            version, number = request.form.get('version').split("_")
+            version, number = request.form.get('version', '').split("_")
             package_reqs = request.form.getlist("packages")
         else:
-            version, number = request.args.get('version').split("_")
+            version, number = request.args.get('version', '').split("_")
             package_reqs = request.args.getlist("packages")
+        if version == '' or len(package_reqs) == 0:
+            return Response(NULL_SCRIPT, mimetype="text/plain")
         legal_methods = InstallMethod.ALLOWED_INSTALLERS_BY_VERSION[version]
         packages_by_name = {p.name: p for p in Package.query.all()}
         methods_by_package = defaultdict(list)
