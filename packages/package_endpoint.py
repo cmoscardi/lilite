@@ -14,10 +14,10 @@ def register_package_creator(app,
     @app.route("/get_installer", methods=["GET", "POST"])
     def get_installer():
         if request.method == "POST":
-            version, number = request.form.get('version', '').split("_")
+            version, number = request.form.get('version', '_').split("_")
             package_reqs = request.form.getlist("packages")
         else:
-            version, number = request.args.get('version', '').split("_")
+            version, number = request.args.get('version', '_').split("_")
             package_reqs = request.args.getlist("packages")
         if version == '' or len(package_reqs) == 0:
             return Response(NULL_SCRIPT, mimetype="text/plain")
