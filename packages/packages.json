@@ -232,7 +232,8 @@
                                          "echo ========================",
                                          "echo ========================",
                                          "echo ========================"],
-                         "package_name": "google-chrome-stable", "post_install": []}}
+                         "package_name": "google-chrome-stable", 
+                         "post_install": ["rm /etc/apt/sources.list.d/google-chrome.list"]}}
 },
 {
   "name": "7zip",
