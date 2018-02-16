@@ -392,6 +392,6 @@
   ],
                            "package_name": "golang-1.9-go",
                            "post_install": ["echo \"export PATH=$PATH:/usr/lib/go-1.9/bin\" >> ~/.bashrc",
-                            ". ~/.profile"]}}
+                            ". ~/.bashrc"]}}
 }
 ]
