@@ -398,7 +398,7 @@
   "description": "Burn images to SD cards & USB drives, safely and easily.",
   "category": "Tools",
   "icon_url":"/static/images/etcher-48.png",
-  "installers": {"apt": {"pre_install": ["apt install -y libappindicator1 libindicator7",
+  "installers": {"apt": {"pre_install": ["apt install -y libappindicator1 libindicator7 libpango1.0-0 policykit-1-gnome",
     "curl -s 'https://api.github.com/repos/resin-io/etcher/releases/latest' | grep \"browser_download_url.*amd64.deb\" | cut -d : -f2,3 | tr -d \\\" | wget -i -",
     "dpkg -i etcher-electron*.deb"
   ],
