@@ -351,12 +351,15 @@
   "category": "Programming",
   "icon_url":"/static/images/nvm-48.png",
   "installers": {"apt": {"pre_install": ["apt-get purge -y nodejs",
+    "git clone https://github.com/creationix/nvm.git $HOME/.nvm",
     "LATEST_NVM_VERSION=`curl -s 'https://api.github.com/repos/creationix/nvm/releases/latest' | grep -P -o '(?<=v)[\\d.][\\d.]*' | head -1`",
-    "curl -o nvm_install.sh \"https://raw.githubusercontent.com/creationix/nvm/v${LATEST_NVM_VERSION}/install.sh\"",
-    "chmod +x nvm_install.sh",
-    "echo '-----------------------------------'",
-    "echo 'Run nvm_install.sh to complete the installation of NVM'",
-    "echo '-----------------------------------'"
+    "cd $HOME/.nvm",
+    "git checkout v$LATEST_NVM_VERSION",
+    ". nvm.sh",
+    "echo -e \"\n# NVM Config\" >> $HOME/.bashrc",
+    "echo \"export NVM_DIR=\"$HOME/.nvm\"\" >> $HOME/.bashrc",
+    "echo \"[ -s \"$NVM_DIR/nvm.sh\" ] && \\. \"$NVM_DIR/nvm.sh\"  # This loads nvm\" >> $HOME/.bashrc",
+    "echo \"[ -s \"$NVM_DIR/bash_completion\" ] && \\. \"$NVM_DIR/bash_completion\"  # This loads nvm bash_completion\" >> $HOME/.bashrc"
   ],
                            "package_name": "",
                            "post_install": []}}
