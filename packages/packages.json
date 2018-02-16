@@ -380,7 +380,7 @@
     "echo 'Done! Run rbenv install <RUBY_VERSION> && rbenv global <RUBY_VERSION> to install ruby.'"
   ],
                            "package_name": "",
-                           "post_install": []}}
+                           "post_install": ["sudo chown -R $USER:$USER $HOME/.rbenv"]}}
 },
 {
   "name": "Go",
