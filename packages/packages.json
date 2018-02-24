@@ -227,7 +227,12 @@
                                          "apt update"],
                          "package_name": "google-chrome-stable", 
                          "post_install": ["rm linux_signing_key.pub",
-                          "rm -f /etc/apt/sources.list.d/google-chrome.list"]}}
+                          "rm -f /etc/apt/sources.list.d/google-chrome.list",
+                          "apt-get update",
+                          "echo ===SOURCES FILES===",
+                          "ls -lh /etc/apt/sources.list.d",
+                          "echo ===SOURCES===",
+                          "cat /etc/apt/sources.list"]}}
 },
 {
   "name": "7zip",
