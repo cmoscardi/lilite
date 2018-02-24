@@ -229,7 +229,7 @@
                          "package_name": "",
                          "post_install": ["rm linux_signing_key.pub",
                                           "rm google-chrome-stable_current_amd64.deb"]}}
-],
+},
 {
   "name": "7zip",
   "description": "7zip",
