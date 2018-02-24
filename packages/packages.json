@@ -341,7 +341,7 @@
     "git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh",
     "[ -f ~/.zshrc ] && cp ~/.zshrc ~/.zshrc.orig",
     "cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc",
-    "-z ${TERM+x} && chsh -s /bin/zsh || echo 'Not a login shell. Make sure to run chsh later.'"],
+    "[ -z ${TERM+x} ] && chsh -s /bin/zsh || echo 'Not a login shell. Make sure to run chsh later.'"],
                            "package_name": "",
                            "post_install": []}}
 },
