@@ -356,6 +356,7 @@
     "LATEST_NVM_VERSION=`curl -s 'https://api.github.com/repos/creationix/nvm/releases/latest' | grep -P -o '(?<=v)[\\d.][\\d.]*' | head -1`",
     "cd $HOME/.nvm",
     "git checkout v$LATEST_NVM_VERSION",
+    "chmod +x nvm.sh",
     "./nvm.sh",
     "echo -e \"\n# NVM Config\" >> $HOME/.bashrc",
     "echo \"export NVM_DIR=\"$HOME/.nvm\"\" >> $HOME/.bashrc",
