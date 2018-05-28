@@ -76,7 +76,7 @@
   "description": "MongoDB",
   "category": "Databases",
   "icon_url":"/static/images/mongodb-48.png",
-  "installers": {"ubuntu": {"pre_install": ["apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6",
+  "installers": {"ubuntu": {"pre_install": ["apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5",
                                             "fnames=`ls /etc/*-release`",
                                             "for f in $fnames; do source $f; done",
                                             "echo ==========; echo $DISTRIB_CODENAME; echo ============;",
