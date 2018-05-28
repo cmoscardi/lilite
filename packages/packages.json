@@ -98,7 +98,7 @@
                           "apt-get -y install apt-transport-https",
                           "apt-get -y install libxss1",
                           "apt-get -y install libappindicator1",
-                          "apt-get -y install libcurl3",
+                          "apt-get -y install libcurl3 gconf2",
                           "apt-get -y install gir1.2-gnomekeyring-1.0",
                           "wget https://downloads.slack-edge.com/linux_releases/slack-desktop-2.6.2-amd64.deb",
                           "dpkg -i slack-desktop-2.6.2-amd64.deb",
