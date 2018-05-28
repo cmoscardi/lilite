@@ -152,9 +152,10 @@
                                          "apt-get -y install software-properties-common python-apt",
                                          "apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9",
                                          "echo ====<>=====",
-                                         "echo \"deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/${ID} ${DISTRIB_CODENAME}/\"",
+                                         "if [ \"$DISTRIB_CODENAME\" = \"bionic\" ]; then DISTRIB='xenial'; else DISTRIB=$DISTRIB_CODENAME; fi" ,
+                                         "echo \"deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/${ID} ${DISTRIB}/\"",
                                          "echo ====<>=====",
-                                         "add-apt-repository \"deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/${ID} ${DISTRIB_CODENAME}/\"",
+                                         "add-apt-repository \"deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/${ID} ${DISTRIB}/\"",
                                          "apt-get update"],
                          "package_name": "r-base",
                          "post_install": []}}
