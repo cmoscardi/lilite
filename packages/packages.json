@@ -356,14 +356,14 @@
     "LATEST_NVM_VERSION=`curl -s 'https://api.github.com/repos/creationix/nvm/releases/latest' | grep -P -o '(?<=v)[\\d.][\\d.]*' | head -1`",
     "cd $HOME/.nvm",
     "git checkout v$LATEST_NVM_VERSION",
-    ". nvm.sh",
+    "./nvm.sh",
     "echo -e \"\n# NVM Config\" >> $HOME/.bashrc",
     "echo \"export NVM_DIR=\"$HOME/.nvm\"\" >> $HOME/.bashrc",
     "echo \"[ -s \"$NVM_DIR/nvm.sh\" ] && \\. \"$NVM_DIR/nvm.sh\"  # This loads nvm\" >> $HOME/.bashrc",
     "echo \"[ -s \"$NVM_DIR/bash_completion\" ] && \\. \"$NVM_DIR/bash_completion\"  # This loads nvm bash_completion\" >> $HOME/.bashrc"
   ],
                            "package_name": "",
-                           "post_install": []}}
+                           "post_install": ["cd $HOME"]}}
 },
 {
   "name": "rbenv & Ruby Build",
