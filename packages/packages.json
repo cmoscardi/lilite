@@ -60,7 +60,7 @@
   "icon_url":"/static/images/skype-48.png",
   "installers": {"apt": {"pre_install": ["dpkg --add-architecture i386",
                                          "apt-get update",
-                                         "apt-get -y install software-properties-common python-apt apt-transport-https",
+                                         "apt-get -y install software-properties-common python-apt apt-transport-https gnome-keyring",
                                          "wget -O skype.deb https://go.skype.com/skypeforlinux-64.deb",
                                          "dpkg -i skype.deb"], "package_name": "", "post_install": ["rm skype.deb"]}}
 },
