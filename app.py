@@ -38,7 +38,15 @@ def ahh():
 @app.route('/')
 @app.route('/index')
 def index():
-    packages = Package.query.all()
+    cont = True
+    while cont:
+        try:
+            packages = Package.query.all()
+            cont = False
+        except:
+            db_session.rollback()
+            cont = True
+
     packages.sort(key=lambda p: p.category)
     packages = groupby(packages, lambda p: p.category)
     ua = request.headers.get('User-Agent')
