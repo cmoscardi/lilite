@@ -21,6 +21,13 @@
   "installers": {"apt": {"pre_install": [], "package_name": "gimp", "post_install": []}}
 },
 {
+  "name": "JDK",
+  "description": "This is the apt default JDK (openJDK 8 as of 12/31/2018)",
+  "category": "Programming",
+  "icon_url":"/static/images/jdk-48.png",
+  "installers": {"apt": {"pre_install": [], "package_name": "default-jdk", "post_install": []}}
+},
+{
   "name": "Gzip",
   "description": "Gzip",
   "category": "Tools",
