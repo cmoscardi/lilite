@@ -21,4 +21,6 @@ $(function(){
     $("#command-row").show();
     return false;
   });
+
+  $('[data-toggle="tooltip"]').tooltip()
 })

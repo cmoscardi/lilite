@@ -54,10 +54,10 @@
             {% for package in p %}
               {% set name=package['name'] %}
               {% set icon=package['icon_url'] %}
-              {% set description=package['icon_url'] %}
+              {% set description=package['description'] %}
               <div>
               <input type="checkbox" id="{{name}}" name="packages" value="{{name}}" />
-              <label for="{{name}}" > {{package['name']}}
+              <label data-toggle="tooltip" title="{{description}}" for="{{name}}" > {{name}}
                 <img height="20" withd="20" src="{{icon}}" />
               </label>
               </div>
