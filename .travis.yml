@@ -15,6 +15,7 @@ env:
   - INSTANCE=ubuntu:14.04
   - INSTANCE=ubuntu:16.04
   - INSTANCE=ubuntu:18.04
+  - INSTANCE=ubuntu:20.04
   #- INSTANCE=ubuntu:15.04
   #- INSTANCE=ubuntu:17.04
   #- INSTANCE=debian:jessie
