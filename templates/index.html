@@ -29,7 +29,11 @@
         <div class="row">
           <h2> Select your linux version </h2>
           <label>
-            Ubuntu 18.04 (New!)
+            Ubuntu 20.04 (New!)
+            <input type="radio" name="version" value="ubuntu_20" required />
+          </label>
+          <label>
+            Ubuntu 18.04
             <input type="radio" name="version" value="ubuntu_18" required />
           </label>
           <label>
@@ -41,8 +45,16 @@
             <input type="radio" name="version" value="ubuntu_14" required />
           </label>
           <div class="alert alert-info">
-            More version support coming soon! If you'd like to contribute, you can look here:
+            More version support coming sometime! If you'd like to contribute, you can look here:
             <a href="https://github.com/cmoscardi/package-installer"> Github project </a>
+          </div>
+        </div>
+        <div class="row mt15">
+          <div class="col-sm-6 col-xs-12 alert alert-info">
+            Don't see a package that you're looking for? Submit an <a href="https://github.com/cmoscardi/package-installer"> issue on Github</a> or email <a href="mailto:packages@lilite.co">packages@lilite.co</a>.
+          </div>
+          <div class="col-sm-6 col-xs-12">
+            <style>.bmc-button img{width: 27px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{line-height: 36px !important;height:37px !important;text-decoration: none !important;display:inline-flex !important;color:#ffffff !important;background-color:#FF813F !important;border-radius: 3px !important;border: 1px solid transparent !important;padding: 0px 9px !important;font-size: 17px !important;letter-spacing:-0.08px !important;;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 auto !important;font-family:'Lato', sans-serif !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;-o-transition: 0.3s all linear !important;-webkit-transition: 0.3s all linear !important;-moz-transition: 0.3s all linear !important;-ms-transition: 0.3s all linear !important;transition: 0.3s all linear !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#ffffff !important;}</style><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"><div style="text-align: center;"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/cmos"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px">Like lilite? Buy me a coffee</span></a></div>
           </div>
         </div>
         <hr /> <div class="row">
@@ -65,26 +77,23 @@
             </div>
           {% endfor %}
         </div>
-        <div class="row mt15">
-          <div class="col-sm-8 col-xs-12 col-sm-offset-2 alert alert-info">
-            Don't see a package that you're looking for? Submit an <a href="https://github.com/cmoscardi/package-installer"> issue on Github</a> or email <a href="mailto:packages@lilite.co">packages@lilite.co</a>!
-          </div>
-        </div>
         <hr />
         <div class="row">
           <div class="col-xs-12 col-sm-4">
             <h2> Install packages </h2>
-            <p> Get your specific link and install package! </p>
+            <p> Get your specific link and install packages. </p>
             <input type="submit" class="btn btn-submit" style="font-size: 20px;" value="Install your packages"/>
           </div>
           <div style="display: none; border-left: 1px solid black;" id="command-row" class="col-xs-12 col-sm-8">
           <h3> Copy the following command: </h3>
           <pre></pre>
+          <h4> Note: this will execute the following script, which you can view in advance/download here as well. <span></span></h4>
           </div>
         </div>
+        <div class="row">
+        <hr style="margin-bottom: 40px; margin-top: 40px;"/>
+        </div>
       </form>
-      <hr style="margin-bottom: 40px; margin-top: 40px;"/>
-      <style>.bmc-button img{width: 27px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{line-height: 36px !important;height:37px !important;text-decoration: none !important;display:inline-flex !important;color:#ffffff !important;background-color:#FF813F !important;border-radius: 3px !important;border: 1px solid transparent !important;padding: 0px 9px !important;font-size: 17px !important;letter-spacing:-0.08px !important;;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 auto !important;font-family:'Lato', sans-serif !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;-o-transition: 0.3s all linear !important;-webkit-transition: 0.3s all linear !important;-moz-transition: 0.3s all linear !important;-ms-transition: 0.3s all linear !important;transition: 0.3s all linear !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#ffffff !important;}</style><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"><div style="text-align: center;"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/cmos"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px">Like lilite? Buy me a coffee</span></a></div>
     </div>
   </body>
   <script>
